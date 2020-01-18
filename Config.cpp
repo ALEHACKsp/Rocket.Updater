@@ -15,7 +15,7 @@ Config::Config()
 	cout << "[INFO] Config Init" << endl;
 	if (!file_existt("beast.conf"))
 	{
-		cout << "[INFO] Creating Config file, please change it with right value" << endl;
+		cout << "[INFO] Creating Config file" << endl;
 		Sleep(50);
 		ofstream confile("beast.conf");
 		if (confile.is_open())
@@ -50,9 +50,7 @@ Config::Config(int numbserv)
 		Sleep(50);
 		ofstream confile("beast.conf");
 		if (confile.is_open())
-		{
-			confile << "This program have been made for unturnedbeast.com, you are not allowed to reuse this program for your server, if your name is dronxa then all good.\nThis program haven't been made for commercial use.\n\n";
-			
+		{			
 			confile << "This is used for debugging" << endl;
 			confile << "NumbersOfServers: " << numbserv << endl;
 			confile << endl << "Steam configuration, used to update" << endl;
@@ -105,7 +103,7 @@ string Config::get_config(string whattogetustupid)
 	}
 	if (!line.compare(""))
 	{
-		cout << "[WARNINGS] Please delete old config file and relaunch me?" << endl;
+		cout << "[WARNING] Please delete old config file and relaunch me?" << endl;
 		return "ERR1";
 	}
 	return line;
